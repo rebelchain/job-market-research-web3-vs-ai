@@ -1,792 +1,1120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Agent Engineer vs Web3 Engineer — Analisis Job Market 2026</title>
-<style>
-  :root {
-    --bg: #0f1117;
-    --surface: #1a1d27;
-    --surface2: #22263a;
-    --border: #2e3347;
-    --accent-ai: #6366f1;
-    --accent-ai-light: #818cf8;
-    --accent-web3: #f59e0b;
-    --accent-web3-light: #fbbf24;
-    --text: #e2e8f0;
-    --text-muted: #94a3b8;
-    --green: #10b981;
-    --red: #ef4444;
-    --winner: #6366f1;
-  }
-  @media (prefers-color-scheme: light) {
-    :root {
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --surface2: #f1f5f9;
-      --border: #e2e8f0;
-      --text: #1e293b;
-      --text-muted: #64748b;
-    }
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    line-height: 1.7;
-    font-size: 15px;
-  }
-  .hero {
-    background: linear-gradient(135deg, #1a1d27 0%, #0f1117 60%, #1a0a2e 100%);
-    border-bottom: 1px solid var(--border);
-    padding: 60px 24px 48px;
-    text-align: center;
-  }
-  .hero-tag {
-    display: inline-block;
-    background: rgba(99,102,241,0.15);
-    border: 1px solid rgba(99,102,241,0.3);
-    color: var(--accent-ai-light);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 6px 16px;
-    border-radius: 999px;
-    margin-bottom: 20px;
-  }
-  .hero h1 {
-    font-size: clamp(24px, 4vw, 42px);
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 12px;
-  }
-  .hero h1 span.ai { color: var(--accent-ai-light); }
-  .hero h1 span.web3 { color: var(--accent-web3-light); }
-  .hero-sub {
-    color: var(--text-muted);
-    font-size: 15px;
-    max-width: 600px;
-    margin: 0 auto 8px;
-  }
-  .hero-date {
-    color: var(--text-muted);
-    font-size: 12px;
-    opacity: 0.7;
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>AI Agent vs Web3 — Career Intelligence Brief 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px 60px;
-  }
+      :root {
+        --ink: #111111;
+        --ink-2: #454545;
+        --ink-3: #888888;
+        --rule: #dcdcdc;
+        --rule-soft: #efefef;
+        --bg: #ffffff;
+        --bg-alt: #f6f6f4;
+        --ai: #0f3cc9;
+        --ai-light: #e8eefa;
+        --web3: #c45e00;
+        --web3-light: #faf0e6;
+        --win-text: #08432a;
+        --win-bg: #e5f5ee;
+        --risk-text: #7a1c1c;
+        --risk-bg: #fae8e8;
+        --size: 960px;
+      }
 
-  /* VERDICT BANNER */
-  .verdict-banner {
-    background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(99,102,241,0.05));
-    border: 2px solid rgba(99,102,241,0.4);
-    border-radius: 16px;
-    padding: 28px 32px;
-    margin: 36px 0;
-    text-align: center;
-  }
-  .verdict-banner .label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--accent-ai-light);
-    margin-bottom: 10px;
-  }
-  .verdict-banner h2 {
-    font-size: clamp(18px, 3vw, 26px);
-    font-weight: 800;
-    color: var(--text);
-    margin-bottom: 10px;
-  }
-  .verdict-banner p {
-    color: var(--text-muted);
-    max-width: 680px;
-    margin: 0 auto;
-    font-size: 14px;
-  }
+      html {
+        scroll-behavior: smooth;
+      }
 
-  /* SECTION */
-  .section {
-    margin-top: 48px;
-  }
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
-  }
-  .section-number {
-    width: 32px; height: 32px;
-    border-radius: 8px;
-    background: var(--accent-ai);
-    color: white;
-    font-weight: 800;
-    font-size: 14px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-  }
-  .section-header h2 {
-    font-size: 18px;
-    font-weight: 700;
-  }
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+        font-size: 15px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
 
-  /* STAT CARDS */
-  .stat-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 14px;
-    margin-bottom: 24px;
-  }
-  .stat-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 18px 16px;
-    text-align: center;
-  }
-  .stat-card .tag {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .stat-card.ai .tag { color: var(--accent-ai-light); }
-  .stat-card.web3 .tag { color: var(--accent-web3-light); }
-  .stat-card .value {
-    font-size: 26px;
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-  .stat-card.ai .value { color: var(--accent-ai-light); }
-  .stat-card.web3 .value { color: var(--accent-web3-light); }
-  .stat-card .desc {
-    font-size: 12px;
-    color: var(--text-muted);
-  }
+      /* ── WRAPPER ── */
+      .wrap {
+        max-width: var(--size);
+        margin-inline: auto;
+        padding-inline: 40px;
+      }
+      @media (max-width: 640px) {
+        .wrap {
+          padding-inline: 20px;
+        }
+      }
 
-  /* COMPARISON TABLE */
-  .comp-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
-    font-size: 14px;
-  }
-  .comp-table th {
-    padding: 14px 16px;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    background: var(--surface2);
-    border-bottom: 2px solid var(--border);
-    text-align: left;
-  }
-  .comp-table th.ai-col { color: var(--accent-ai-light); }
-  .comp-table th.web3-col { color: var(--accent-web3-light); }
-  .comp-table td {
-    padding: 13px 16px;
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
-  }
-  .comp-table tr:last-child td { border-bottom: none; }
-  .comp-table td.metric {
-    font-weight: 600;
-    font-size: 13px;
-    color: var(--text-muted);
-    width: 22%;
-  }
-  .comp-table td.ai-val { color: var(--text); }
-  .comp-table td.web3-val { color: var(--text); }
-  .badge {
-    display: inline-block;
-    padding: 2px 9px;
-    border-radius: 999px;
-    font-size: 11px;
-    font-weight: 700;
-  }
-  .badge-win { background: rgba(99,102,241,0.2); color: var(--accent-ai-light); border: 1px solid rgba(99,102,241,0.3); }
-  .badge-ok { background: rgba(245,158,11,0.15); color: var(--accent-web3-light); border: 1px solid rgba(245,158,11,0.3); }
-  .badge-risk { background: rgba(239,68,68,0.15); color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); }
-  .badge-good { background: rgba(16,185,129,0.15); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.3); }
+      /* ── MASTHEAD ── */
+      .masthead {
+        border-bottom: 2px solid var(--ink);
+        padding: 28px 0 16px;
+      }
+      .masthead-inner {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .masthead-brand {
+        font-family: "Space Mono", monospace;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        color: var(--ink);
+        text-transform: none;
+      }
+      .masthead-meta {
+        font-family: "Space Mono", monospace;
+        font-size: 11px;
+        color: var(--ink-3);
+        text-align: right;
+      }
 
-  /* INSIGHT CARDS */
-  .insight-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 16px;
-  }
-  @media (max-width: 640px) { .insight-grid { grid-template-columns: 1fr; } }
-  .insight-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px;
-  }
-  .insight-card .ic-header {
-    display: flex; align-items: center; gap: 10px;
-    margin-bottom: 14px;
-  }
-  .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-  .dot-ai { background: var(--accent-ai); }
-  .dot-web3 { background: var(--accent-web3); }
-  .insight-card h3 { font-size: 14px; font-weight: 700; }
-  .insight-card ul { padding-left: 18px; }
-  .insight-card ul li {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-bottom: 7px;
-    line-height: 1.5;
-  }
-  .insight-card ul li strong { color: var(--text); }
+      /* ── HERO ── */
+      .hero {
+        padding: 64px 0 56px;
+        border-bottom: 1px solid var(--rule);
+      }
+      .hero-eyebrow {
+        font-family: "Space Mono", monospace;
+        font-size: 11px;
+        color: var(--ai);
+        letter-spacing: 0.1em;
+        margin-bottom: 20px;
+      }
+      .hero-title {
+        font-family: "Instrument Serif", Georgia, serif;
+        font-size: clamp(38px, 6vw, 72px);
+        font-weight: 400;
+        line-height: 1.05;
+        letter-spacing: -0.01em;
+        max-width: 820px;
+      }
+      .hero-title em {
+        font-style: italic;
+        color: var(--ai);
+      }
+      .hero-title .vs {
+        font-family: "Space Mono", monospace;
+        font-size: clamp(14px, 2vw, 22px);
+        font-weight: 400;
+        font-style: normal;
+        color: var(--ink-3);
+        display: block;
+        margin: 10px 0;
+        letter-spacing: 0.1em;
+      }
+      .hero-sub {
+        margin-top: 28px;
+        max-width: 580px;
+        color: var(--ink-2);
+        font-size: 16px;
+        line-height: 1.7;
+      }
+      .hero-sources {
+        margin-top: 20px;
+        font-family: "Space Mono", monospace;
+        font-size: 10px;
+        color: var(--ink-3);
+        border-top: 1px solid var(--rule-soft);
+        padding-top: 14px;
+      }
 
-  /* RISK SECTION */
-  .risk-block {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px;
-    margin-top: 14px;
-  }
-  .risk-block h4 {
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .risk-block p, .risk-block li {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 6px;
-  }
-  .risk-block ul { padding-left: 16px; }
+      /* ── VERDICT BAND ── */
+      .verdict {
+        background: var(--ink);
+        color: #ffffff;
+        padding: 56px 0;
+        margin: 0;
+      }
+      .verdict-label {
+        font-family: "Space Mono", monospace;
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.45);
+        letter-spacing: 0.15em;
+        margin-bottom: 18px;
+      }
+      .verdict-heading {
+        font-family: "Instrument Serif", Georgia, serif;
+        font-size: clamp(26px, 4.5vw, 52px);
+        font-weight: 400;
+        line-height: 1.1;
+        max-width: 740px;
+        margin-bottom: 20px;
+      }
+      .verdict-heading strong {
+        color: #c8d8ff;
+        font-weight: 400;
+      }
+      .verdict-body {
+        font-size: 15px;
+        line-height: 1.75;
+        color: rgba(255, 255, 255, 0.72);
+        max-width: 620px;
+      }
 
-  /* CALLOUT */
-  .callout {
-    border-radius: 12px;
-    padding: 18px 20px;
-    margin: 16px 0;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-  .callout-ai { background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.25); }
-  .callout-web3 { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.25); }
-  .callout-warn { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.25); }
-  .callout-note { background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.25); }
-  .callout strong { display: block; margin-bottom: 4px; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
-  .callout-ai strong { color: var(--accent-ai-light); }
-  .callout-web3 strong { color: var(--accent-web3-light); }
-  .callout-warn strong { color: #fca5a5; }
-  .callout-note strong { color: #6ee7b7; }
+      /* ── STATS STRIP ── */
+      .stats-strip {
+        border-bottom: 1px solid var(--rule);
+        padding: 40px 0;
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+      }
+      @media (max-width: 640px) {
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
 
-  /* CHART BAR */
-  .bar-chart { margin: 16px 0; }
-  .bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
-  .bar-label { font-size: 13px; color: var(--text-muted); min-width: 160px; }
-  .bar-track { flex: 1; background: var(--surface2); border-radius: 4px; height: 22px; overflow: hidden; }
-  .bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; }
-  .bar-fill span { font-size: 11px; font-weight: 700; color: white; }
-  .bar-ai { background: linear-gradient(90deg, #4f46e5, #818cf8); }
-  .bar-web3 { background: linear-gradient(90deg, #b45309, #fbbf24); }
+      .stat-item {
+        padding: 20px 24px 20px 0;
+        border-right: 1px solid var(--rule);
+      }
+      .stat-item:last-child {
+        border-right: none;
+      }
+      .stat-item:first-child {
+        padding-left: 0;
+      }
+      @media (max-width: 640px) {
+        .stat-item {
+          padding: 16px 16px 16px 0;
+        }
+        .stat-item:nth-child(2) {
+          border-right: none;
+        }
+        .stat-item:nth-child(3) {
+          border-top: 1px solid var(--rule);
+        }
+        .stat-item:nth-child(4) {
+          border-top: 1px solid var(--rule);
+          border-right: none;
+        }
+      }
 
-  /* FINAL VERDICT */
-  .final-verdict {
-    background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(99,102,241,0.04));
-    border: 1px solid rgba(99,102,241,0.35);
-    border-radius: 16px;
-    padding: 32px;
-    margin-top: 40px;
-  }
-  .final-verdict h2 {
-    font-size: 20px;
-    font-weight: 800;
-    margin-bottom: 16px;
-    color: var(--accent-ai-light);
-  }
-  .final-verdict p {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: 14px;
-    line-height: 1.7;
-  }
-  .final-verdict p strong { color: var(--text); }
+      .stat-number {
+        font-family: "Space Mono", monospace;
+        font-size: clamp(28px, 4vw, 44px);
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+      .stat-number.ai {
+        color: var(--ai);
+      }
+      .stat-number.web3 {
+        color: var(--web3);
+      }
+      .stat-desc {
+        font-size: 12px;
+        color: var(--ink-3);
+        line-height: 1.4;
+      }
+      .stat-source {
+        font-family: "Space Mono", monospace;
+        font-size: 9px;
+        color: #bbbbbb;
+        margin-top: 6px;
+      }
 
-  .source-note {
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border);
-    font-size: 12px;
-    color: var(--text-muted);
-    line-height: 1.8;
-  }
+      /* ── SECTION ── */
+      .section {
+        padding: 52px 0;
+        border-bottom: 1px solid var(--rule);
+      }
+      .section-header {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 40px;
+        margin-bottom: 32px;
+      }
+      @media (max-width: 640px) {
+        .section-header {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+      }
+      .section-label {
+        font-family: "Space Mono", monospace;
+        font-size: 11px;
+        color: var(--ink-3);
+        padding-top: 4px;
+        line-height: 1.5;
+      }
+      .section-title {
+        font-family: "Instrument Serif", Georgia, serif;
+        font-size: clamp(22px, 3vw, 32px);
+        font-weight: 400;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+      }
 
-  .divider { height: 1px; background: var(--border); margin: 32px 0; }
+      /* ── TWO COL INSIGHT ── */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+      }
+      @media (max-width: 640px) {
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+      }
 
-  h3.sub { font-size: 16px; font-weight: 700; margin: 20px 0 10px; }
-</style>
-</head>
-<body>
+      .col-panel {
+        padding: 28px 32px 28px 0;
+        border-right: 1px solid var(--rule);
+      }
+      .col-panel:last-child {
+        border-right: none;
+        padding-right: 0;
+        padding-left: 32px;
+      }
+      .col-panel:first-child {
+        padding-left: 0;
+      }
+      @media (max-width: 640px) {
+        .col-panel {
+          padding: 20px 0;
+          border-right: none;
+          border-bottom: 1px solid var(--rule);
+        }
+        .col-panel:last-child {
+          border-bottom: none;
+          padding-left: 0;
+        }
+      }
+      .col-tag {
+        font-family: "Space Mono", monospace;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        margin-bottom: 14px;
+        display: block;
+      }
+      .col-tag.ai {
+        color: var(--ai);
+      }
+      .col-tag.web3 {
+        color: var(--web3);
+      }
+      .col-panel h3 {
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+      .col-panel ul {
+        list-style: none;
+      }
+      .col-panel ul li {
+        font-size: 14px;
+        color: var(--ink-2);
+        padding: 7px 0;
+        border-bottom: 1px solid var(--rule-soft);
+        line-height: 1.5;
+      }
+      .col-panel ul li:last-child {
+        border-bottom: none;
+      }
+      .col-panel ul li strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
 
-<div class="hero">
-  <div class="hero-tag">📊 Job Market Research — Q1–Q2 2026</div>
-  <h1><span class="ai">AI Agent Engineer</span> vs <span class="web3">Web3 / Blockchain Engineer</span></h1>
-  <p class="hero-sub">Analisis mendalam: permintaan, penawaran, gaji, prospek karir — berdasarkan data riil 2026</p>
-  <p class="hero-date">Disusun: Oktober 2026 · Sumber: Stanford HAI, PwC, Gartner, McKinsey, Robert Half, LinkedIn, CryptoJobsList</p>
-</div>
+      /* ── TABLE ── */
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        margin-top: 8px;
+      }
+      .data-table th {
+        text-align: left;
+        padding: 10px 14px;
+        font-family: "Space Mono", monospace;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: var(--ink-3);
+        border-bottom: 2px solid var(--ink);
+        background: var(--bg);
+      }
+      .data-table th.ai-h {
+        color: var(--ai);
+      }
+      .data-table th.web3-h {
+        color: var(--web3);
+      }
+      .data-table td {
+        padding: 13px 14px;
+        vertical-align: top;
+        border-bottom: 1px solid var(--rule-soft);
+        line-height: 1.5;
+      }
+      .data-table tr:last-child td {
+        border-bottom: none;
+      }
+      .data-table td.metric-cell {
+        font-weight: 600;
+        font-size: 13px;
+        color: var(--ink-3);
+        white-space: nowrap;
+      }
+      .data-table tr.ai-win td.metric-cell {
+        border-left: 3px solid var(--ai);
+      }
+      .data-table tr.web3-win td.metric-cell {
+        border-left: 3px solid var(--web3);
+      }
 
-<div class="container">
+      .win-mark {
+        display: inline-block;
+        font-family: "Space Mono", monospace;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 2px 8px;
+        background: var(--win-bg);
+        color: var(--win-text);
+        margin-left: 6px;
+        vertical-align: middle;
+      }
+      .risk-mark {
+        display: inline-block;
+        font-family: "Space Mono", monospace;
+        font-size: 10px;
+        padding: 2px 8px;
+        background: var(--risk-bg);
+        color: var(--risk-text);
+        margin-left: 6px;
+        vertical-align: middle;
+      }
 
-  <!-- VERDICT BANNER -->
-  <div class="verdict-banner">
-    <div class="label">🏆 Kesimpulan Utama</div>
-    <h2>AI Agent Engineering menang mutlak di 2026 — secara volume, gaji, dan prospek jangka panjang</h2>
-    <p>Selisih permintaan bukan sedikit — AI Agent punya ~90.000 lowongan di AS saja vs ~15.000–20.000 lowongan blockchain secara global. Ini beda skala 5–6×, bukan sekadar perbedaan marginal.</p>
-  </div>
+      @media (max-width: 640px) {
+        .data-table {
+          font-size: 13px;
+        }
+        .data-table td,
+        .data-table th {
+          padding: 10px 8px;
+        }
+        .data-table td.metric-cell {
+          white-space: normal;
+        }
+      }
 
-  <!-- SECTION 1: SUPPLY DEMAND OVERVIEW -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-number">1</div>
-      <h2>Permintaan & Penawaran — Gambaran Besar Q1–Q2 2026</h2>
-    </div>
+      /* ── CALLOUT ── */
+      .callout {
+        border-left: 3px solid var(--ink);
+        padding: 16px 20px;
+        margin: 24px 0;
+        background: var(--bg-alt);
+      }
+      .callout.ai-callout {
+        border-left-color: var(--ai);
+      }
+      .callout.web3-callout {
+        border-left-color: var(--web3);
+      }
+      .callout-title {
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 6px;
+        color: var(--ink);
+      }
+      .callout p {
+        font-size: 14px;
+        color: var(--ink-2);
+        line-height: 1.65;
+      }
+      .callout p strong {
+        color: var(--ink);
+      }
 
-    <p style="color:var(--text-muted);font-size:14px;margin-bottom:20px;">Data dari platform rekrutmen utama, Stanford HAI Index 2026, dan laporan industri menunjukkan ketimpangan yang sangat besar antara dua track ini.</p>
+      /* ── DSA SECTION ── */
+      .dsa-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0;
+        border: 1px solid var(--rule);
+      }
+      @media (max-width: 640px) {
+        .dsa-grid {
+          grid-template-columns: 1fr;
+        }
+      }
 
-    <div class="stat-grid">
-      <div class="stat-card ai">
-        <div class="tag">AI Agent — Lowongan AS</div>
-        <div class="value">~90.000</div>
-        <div class="desc">Postingan aktif di AS saja (Stanford HAI 2026)</div>
-      </div>
-      <div class="stat-card ai">
-        <div class="tag">AI Agent — Pertumbuhan YoY</div>
-        <div class="value">+280%</div>
-        <div class="desc">Pertumbuhan YoY listing agentic AI (2025→2026)</div>
-      </div>
-      <div class="stat-card web3">
-        <div class="tag">Web3 — Lowongan Global</div>
-        <div class="value">~15–20k</div>
-        <div class="desc">Estimasi lowongan aktif secara global</div>
-      </div>
-      <div class="stat-card web3">
-        <div class="tag">Web3 — Pertumbuhan YoY</div>
-        <div class="value">+45%</div>
-        <div class="desc">Pertumbuhan postingan blockchain 2025→2026</div>
-      </div>
-    </div>
+      .dsa-col {
+        padding: 24px;
+        border-right: 1px solid var(--rule);
+      }
+      .dsa-col:last-child {
+        border-right: none;
+      }
+      @media (max-width: 640px) {
+        .dsa-col {
+          border-right: none;
+          border-bottom: 1px solid var(--rule);
+        }
+        .dsa-col:last-child {
+          border-bottom: none;
+        }
+      }
+      .dsa-col-title {
+        font-family: "Space Mono", monospace;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        margin-bottom: 14px;
+        display: block;
+      }
+      .dsa-col.must .dsa-col-title {
+        color: var(--win-text);
+      }
+      .dsa-col.sit .dsa-col-title {
+        color: #7a5f00;
+      }
+      .dsa-col.skip .dsa-col-title {
+        color: var(--ink-3);
+      }
+      .dsa-col ul {
+        list-style: none;
+      }
+      .dsa-col ul li {
+        font-size: 13px;
+        color: var(--ink-2);
+        padding: 5px 0;
+        border-bottom: 1px solid var(--rule-soft);
+        line-height: 1.4;
+      }
+      .dsa-col ul li:last-child {
+        border-bottom: none;
+      }
 
-    <h3 class="sub">Perbandingan Visual Volume Pasar</h3>
-    <div class="bar-chart">
-      <div class="bar-row">
-        <div class="bar-label">AI Agent — Lowongan (AS)</div>
-        <div class="bar-track">
-          <div class="bar-fill bar-ai" style="width:100%"><span>~90.000</span></div>
+      /* ── COMPANY TIERS ── */
+      .tier-block {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 24px;
+        padding: 24px 0;
+        border-bottom: 1px solid var(--rule-soft);
+        align-items: start;
+      }
+      @media (max-width: 640px) {
+        .tier-block {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+      }
+      .tier-block:last-child {
+        border-bottom: none;
+      }
+      .tier-label {
+        font-family: "Space Mono", monospace;
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+      .tier-label.t1 {
+        color: var(--ink);
+      }
+      .tier-label.t2 {
+        color: var(--ai);
+      }
+      .tier-label.t3 {
+        color: var(--ink-3);
+      }
+      .tier-content {
+        font-size: 14px;
+        color: var(--ink-2);
+        line-height: 1.65;
+      }
+      .tier-content strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      /* ── FINAL REC ── */
+      .final-rec {
+        background: var(--bg-alt);
+        padding: 52px 0;
+        border-top: 2px solid var(--ink);
+      }
+      .rec-number {
+        font-family: "Space Mono", monospace;
+        font-size: 80px;
+        font-weight: 700;
+        color: var(--rule);
+        line-height: 1;
+        margin-bottom: -10px;
+        user-select: none;
+      }
+      .rec-title {
+        font-family: "Instrument Serif", Georgia, serif;
+        font-size: clamp(22px, 3.5vw, 40px);
+        font-weight: 400;
+        line-height: 1.15;
+        max-width: 700px;
+        margin-bottom: 20px;
+      }
+      .rec-body {
+        font-size: 15px;
+        color: var(--ink-2);
+        max-width: 600px;
+        line-height: 1.75;
+        margin-bottom: 14px;
+      }
+      .rec-body strong {
+        color: var(--ink);
+      }
+
+      /* ── FOOTER ── */
+      .footer {
+        padding: 28px 0;
+        border-top: 1px solid var(--rule);
+      }
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .footer-text {
+        font-family: "Space Mono", monospace;
+        font-size: 10px;
+        color: var(--ink-3);
+      }
+
+      /* ── RESPONSIVE TABLE SCROLL ── */
+      .table-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      /* ── FOCUS & A11Y ── */
+      a:focus-visible {
+        outline: 2px solid var(--ai);
+        outline-offset: 2px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          transition: none !important;
+          animation: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- MASTHEAD -->
+    <header class="masthead">
+      <div class="wrap">
+        <div class="masthead-inner">
+          <span class="masthead-brand">Career Intelligence Brief</span>
+          <span class="masthead-meta"
+            >Vol. 01 — Q1/Q2 2026<br />Edisi Khusus: Pilihan Karir
+            Engineer</span
+          >
         </div>
       </div>
-      <div class="bar-row">
-        <div class="bar-label">AI/ML Umum — Global</div>
-        <div class="bar-track">
-          <div class="bar-fill bar-ai" style="width:85%;opacity:0.7"><span>&gt;1.000.000</span></div>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="wrap">
+        <p class="hero-eyebrow">job market analysis / career decision</p>
+        <h1 class="hero-title">
+          <em>AI Agent Engineer</em>
+          <span class="vs">— vs —</span>
+          Web3 / Blockchain Engineer
+        </h1>
+        <p class="hero-sub">
+          Perbandingan mendalam berdasarkan data permintaan, penawaran, gaji,
+          dan prospek karir jangka panjang. Termasuk: apakah kamu perlu
+          MAANG-level DSA untuk masuk ke dunia AI.
+        </p>
+        <p class="hero-sources">
+          Sumber: Stanford HAI 2026 AI Index · PwC Global AI Jobs Barometer ·
+          Gartner · McKinsey · Robert Half 2026 Salary Guide · LinkedIn ·
+          MarketsandMarkets · CryptoJobsList Q1–Q3 2026 · Web3.Career
+        </p>
+      </div>
+    </div>
+
+    <!-- VERDICT BAND -->
+    <div class="verdict">
+      <div class="wrap">
+        <p class="verdict-label">kesimpulan utama</p>
+        <h2 class="verdict-heading">
+          Untuk tujuan ship dan berkarir dengan prospek terbaik di 2026 dan
+          seterusnya:<br />
+          <strong>pilih AI Agent Engineering.</strong>
+        </h2>
+        <p class="verdict-body">
+          Perbedaannya bukan tipis — ini perbedaan skala. AI Agent memiliki
+          sekitar 90.000 lowongan di AS saja versus 15.000–20.000 secara global
+          untuk Web3. Pertumbuhannya 280% versus 45%. Gaji lebih tinggi di semua
+          level. Dan skillsnya transferable ke hampir semua industri.
+        </p>
+      </div>
+    </div>
+
+    <!-- STATS STRIP -->
+    <div class="stats-strip">
+      <div class="wrap">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number ai">90k</div>
+            <div class="stat-desc">Lowongan agentic AI di AS</div>
+            <div class="stat-source">Stanford HAI 2026</div>
+          </div>
+          <div class="stat-item" style="padding-left: 24px">
+            <div class="stat-number ai">+280%</div>
+            <div class="stat-desc">Pertumbuhan YoY AI Agent jobs</div>
+            <div class="stat-source">Stanford HAI 2026</div>
+          </div>
+          <div class="stat-item" style="padding-left: 24px">
+            <div class="stat-number web3">15–20k</div>
+            <div class="stat-desc">Lowongan Web3 secara global</div>
+            <div class="stat-source">Bitget / CryptoJobsList</div>
+          </div>
+          <div class="stat-item" style="padding-left: 24px">
+            <div class="stat-number web3">+45%</div>
+            <div class="stat-desc">Pertumbuhan YoY Web3 jobs</div>
+            <div class="stat-source">Crypto.jobs 2026</div>
+          </div>
         </div>
       </div>
-      <div class="bar-row">
-        <div class="bar-label">Web3/Blockchain — Global</div>
-        <div class="bar-track">
-          <div class="bar-fill bar-web3" style="width:18%"><span>~15–20k</span></div>
+    </div>
+
+    <!-- SECTION: DEMAND & SUPPLY -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="section-label"
+            >Bagian 1<br />Permintaan &amp; Penawaran</span
+          >
+          <h2 class="section-title">
+            Ketimpangan volume yang tidak bisa diabaikan
+          </h2>
+        </div>
+        <div class="two-col">
+          <div class="col-panel">
+            <span class="col-tag ai">AI Agent Engineering</span>
+            <ul>
+              <li>
+                <strong>Seller's market murni</strong> — demand jauh melampaui
+                supply.
+              </li>
+              <li>
+                Hanya ~2.000 engineer AS yang dinilai mampu deliver enterprise
+                AI ROI secara konsisten.
+              </li>
+              <li>
+                <strong>94% engineering leaders</strong> melaporkan skills gap
+                agentic AI.
+              </li>
+              <li>
+                Perusahaan yang berencana hire AI engineers melonjak dari 5–10%
+                ke <strong>70% di Q2 2026</strong>.
+              </li>
+              <li>
+                LinkedIn: "AI Engineer" adalah
+                <strong>job title tumbuh paling cepat</strong> di AS 2026.
+              </li>
+            </ul>
+          </div>
+          <div class="col-panel">
+            <span class="col-tag web3">Web3 / Blockchain</span>
+            <ul>
+              <li>
+                Talent-to-job ratio <strong>1.97:1</strong> — mendekati
+                seimbang, bukan shortage parah.
+              </li>
+              <li>
+                Rata-rata <strong>120 pelamar</strong> per satu lowongan
+                blockchain.
+              </li>
+              <li>
+                <strong>41% postingan</strong> mensyaratkan 5+ tahun pengalaman
+                — entry-level sangat ketat.
+              </li>
+              <li>
+                Q3 2026: lebih dari <strong>90% perusahaan Web3</strong> dalam
+                mode menunggu atau kontraksi.
+              </li>
+              <li>
+                Lebih dari <strong>53% lowongan Web3</strong> kini mensyaratkan
+                kemampuan AI.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout ai-callout" style="margin-top: 24px">
+          <p class="callout-title">Perbandingan Skala</p>
+          <p>
+            AI memiliki lebih dari
+            <strong>1 juta posisi terbuka secara global</strong>, sementara
+            blockchain mendukung sekitar
+            <strong>15.000–20.000 lowongan aktif</strong>. Ini bukan selisih
+            tipis — ini perbedaan 50× dalam ukuran pasar tenaga kerja.
+          </p>
         </div>
       </div>
-      <div class="bar-row">
-        <div class="bar-label">Web3 — Platform Khusus</div>
-        <div class="bar-track">
-          <div class="bar-fill bar-web3" style="width:8%;opacity:0.7"><span>~1.370 (crypto.jobs)</span></div>
+    </section>
+
+    <!-- SECTION: SALARY -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="section-label">Bagian 2<br />Perbandingan Gaji</span>
+          <h2 class="section-title">
+            AI unggul di setiap level, dari entry hingga frontier
+          </h2>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="width: 18%">Level</th>
+                <th class="ai-h" style="width: 32%">
+                  AI Agent Engineer (USD/tahun)
+                </th>
+                <th class="web3-h" style="width: 32%">
+                  Web3/Blockchain Engineer (USD/tahun)
+                </th>
+                <th style="width: 18%">Selisih</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="ai-win">
+                <td class="metric-cell">Entry</td>
+                <td>$100k – $135k</td>
+                <td>$78k – $120k</td>
+                <td><span class="win-mark">AI +</span></td>
+              </tr>
+              <tr class="ai-win">
+                <td class="metric-cell">Mid-Level</td>
+                <td>$155k – $220k</td>
+                <td>$120k – $191k</td>
+                <td><span class="win-mark">AI +</span></td>
+              </tr>
+              <tr class="ai-win">
+                <td class="metric-cell">Senior</td>
+                <td>$220k – $320k</td>
+                <td>$150k – $262k</td>
+                <td><span class="win-mark">AI ++</span></td>
+              </tr>
+              <tr class="ai-win">
+                <td class="metric-cell">Staff / Lead</td>
+                <td>$290k – $607k</td>
+                <td>$200k – $300k</td>
+                <td><span class="win-mark">AI +++</span></td>
+              </tr>
+              <tr class="ai-win">
+                <td class="metric-cell">Frontier Labs</td>
+                <td>$600k – $1M+ (OpenAI, Anthropic)</td>
+                <td>$250k – $350k</td>
+                <td><span class="win-mark">AI +++</span></td>
+              </tr>
+              <tr>
+                <td class="metric-cell">Premi Skills</td>
+                <td>+62% di atas rata-rata tech (PwC 2026)</td>
+                <td>+35–50% di atas software engineer biasa</td>
+                <td><span class="win-mark">AI +</span></td>
+              </tr>
+              <tr class="web3-win">
+                <td class="metric-cell">Remote Work</td>
+                <td>Banyak, tapi big tech mulai hybrid</td>
+                <td>78% fully remote — lebih fleksibel</td>
+                <td>
+                  <span
+                    style="
+                      display: inline-block;
+                      font-family: &quot;Space Mono&quot;, monospace;
+                      font-size: 10px;
+                      padding: 2px 8px;
+                      background: var(--web3-light);
+                      color: var(--web3);
+                      margin-left: 6px;
+                    "
+                    >Web3 +</span
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="callout callout-warn">
-      <strong>⚠️ Realita Web3 yang Tersembunyi (Q3 2026 Report — TechFlow)</strong>
-      Meski angka total terlihat positif, laporan Q3 2026 mengungkap bahwa "lebih dari 90% perusahaan Web3 sedang dalam mode menunggu, stabilisasi, atau kontraksi." Pertumbuhan lowongan terkonsentrasi hanya pada sebagian kecil perusahaan besar. Kompetisi per lowongan rata-rata 120 pelamar (Web3.Career).
-    </div>
-
-    <div class="callout callout-ai">
-      <strong>✅ Realita AI Agent yang Sebenarnya</strong>
-      Perusahaan yang berencana merekrut Forward-Deployed AI Engineers melonjak dari 5–10% di awal 2026 menjadi 70% di Q2 2026 (TechCrunch). LinkedIn menyebut "AI Engineer" sebagai job title dengan pertumbuhan tercepat di AS tahun 2026. Postingan AI/ML tumbuh +74% YoY di atas pertumbuhan 2025 yang sudah kuat.
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- SECTION 2: SALARY COMPARISON -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-number">2</div>
-      <h2>Perbandingan Gaji — Data Riil 2026</h2>
-    </div>
-
-    <table class="comp-table">
-      <thead>
-        <tr>
-          <th>Level</th>
-          <th class="ai-col">🤖 AI Agent Engineer (USD/tahun)</th>
-          <th class="web3-col">⛓️ Web3/Blockchain Engineer (USD/tahun)</th>
-          <th>Unggul</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="metric">Entry-Level</td>
-          <td class="ai-val">$100K – $135K</td>
-          <td class="web3-val">$78K – $120K</td>
-          <td><span class="badge badge-win">AI ✓</span></td>
-        </tr>
-        <tr>
-          <td class="metric">Mid-Level</td>
-          <td class="ai-val">$155K – $220K</td>
-          <td class="web3-val">$120K – $191K</td>
-          <td><span class="badge badge-win">AI ✓</span></td>
-        </tr>
-        <tr>
-          <td class="metric">Senior</td>
-          <td class="ai-val">$220K – $320K</td>
-          <td class="web3-val">$150K – $262K</td>
-          <td><span class="badge badge-win">AI ✓</span></td>
-        </tr>
-        <tr>
-          <td class="metric">Staff / Lead</td>
-          <td class="ai-val">$290K – $607K (big tech)</td>
-          <td class="web3-val">$200K – $300K</td>
-          <td><span class="badge badge-win">AI ✓✓</span></td>
-        </tr>
-        <tr>
-          <td class="metric">Top Tier / Frontier</td>
-          <td class="ai-val">$600K – $1M+ (OpenAI, Anthropic)</td>
-          <td class="web3-val">$250K–350K (protokol besar)</td>
-          <td><span class="badge badge-win">AI ✓✓✓</span></td>
-        </tr>
-        <tr>
-          <td class="metric">Avg. Market (AS)</td>
-          <td class="ai-val"><strong>$170K–$211K</strong> (midpoint broad market)</td>
-          <td class="web3-val"><strong>$150K–$167K</strong> (Web3.Career avg)</td>
-          <td><span class="badge badge-win">AI ✓</span></td>
-        </tr>
-        <tr>
-          <td class="metric">Premi AI Skills</td>
-          <td class="ai-val">+62% di atas rata-rata tech (PwC 2026)</td>
-          <td class="web3-val">+35–50% di atas software engineer biasa</td>
-          <td><span class="badge badge-win">AI ✓</span></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="callout callout-note" style="margin-top:16px;">
-      <strong>💡 Konteks Penting</strong>
-      PwC 2026 Global AI Jobs Barometer (dari 1 miliar iklan lowongan) menemukan bahwa AI skills wage premium naik dari 25% di 2024 → 57% di 2025 → 62% di 2026. Pekerjaan dengan AI skills tumbuh 8× lebih cepat dari rata-rata pasar kerja secara keseluruhan.
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- SECTION 3: SUPPLY VS DEMAND ANALYSIS -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-number">3</div>
-      <h2>Analisis Supply vs Demand — Siapa yang "Seller's Market"?</h2>
-    </div>
-
-    <div class="insight-grid">
-      <div class="insight-card">
-        <div class="ic-header">
-          <div class="dot dot-ai"></div>
-          <h3>AI Agent Engineering</h3>
+    <!-- SECTION: MARKET SIZE -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="section-label"
+            >Bagian 3<br />Ukuran Pasar &amp; Proyeksi</span
+          >
+          <h2 class="section-title">
+            AI tumbuh pada CAGR 46.3% menuju $52.6 miliar pada 2030
+          </h2>
         </div>
-        <ul>
-          <li><strong>Demand jauh melebihi supply.</strong> KORE1 menyebutnya "seller's market" — lebih banyak lowongan daripada engineer yang bisa ship agent yang reliable.</li>
-          <li><strong>Hanya ~2.000 engineer AS</strong> yang dinilai mampu deliver enterprise AI ROI secara konsisten (TechCrunch estimate).</li>
-          <li><strong>94% engineering leaders</strong> melaporkan skills gap dalam agentic AI (Interview Kickstart Survey 2026).</li>
-          <li><strong>New grad hiring turun 50%+</strong> di top labs, tapi <strong>mid-career dengan produksi AI nyata</strong> bisa dapat multiple offers dalam hitungan minggu.</li>
-          <li>Frontier labs (OpenAI, Anthropic) bersaing langsung dengan perusahaan enterprise untuk orang yang sama.</li>
-        </ul>
-      </div>
-      <div class="insight-card">
-        <div class="ic-header">
-          <div class="dot dot-web3"></div>
-          <h3>Web3 / Blockchain Engineering</h3>
+        <div class="two-col">
+          <div class="col-panel">
+            <span class="col-tag ai">AI Agent Market — Trajektori</span>
+            <ul>
+              <li>Nilai pasar 2025: <strong>$7.84 miliar</strong></li>
+              <li>
+                Proyeksi 2030: <strong>$52.62 miliar</strong> — CAGR 46.3%
+              </li>
+              <li>
+                Gartner: <strong>40% enterprise apps</strong> akan terintegrasi
+                AI agent by akhir 2026 (dari &lt;5% di 2025)
+              </li>
+              <li>
+                Coding/dev segment: CAGR <strong>52.4%</strong> — tumbuh paling
+                cepat
+              </li>
+              <li>
+                Potensi jangka panjang: <strong>$450 miliar</strong> enterprise
+                software revenue by 2035
+              </li>
+            </ul>
+          </div>
+          <div class="col-panel">
+            <span class="col-tag web3">Web3 Market — Realita</span>
+            <ul>
+              <li>
+                CoinCub: <strong>66.000+ peran baru</strong> di 2025 — rebound
+                47% dari 2024
+              </li>
+              <li>
+                Postingan naik 45% YoY, tapi dari
+                <strong>base jauh lebih kecil</strong>
+              </li>
+              <li>
+                Blockchain bisa capai 500.000+ jobs by 2028 — tapi
+                <strong>masih spekulasi</strong>
+              </li>
+              <li>
+                Hiring sangat korelasi dengan
+                <strong>siklus bull/bear crypto</strong>
+              </li>
+              <li>Segmen terpanas: Security (+71%), Protocol Design (+52%)</li>
+            </ul>
+          </div>
         </div>
-        <ul>
-          <li><strong>Supply-demand lebih seimbang,</strong> bahkan di beberapa segmen oversupply. Rata-rata 120 pelamar per 1 lowongan (Web3.Career data Q1 2026).</li>
-          <li><strong>Talent-to-job ratio: 1.97:1</strong> (CryptoJobs Q1 2026) — mendekati kondisi seimbang, bukan shortage parah.</li>
-          <li><strong>Senior roles dominan</strong> — 41% postingan butuh 5+ tahun pengalaman. Entry-level sangat sulit.</li>
-          <li><strong>Role engineering turun -12%</strong> dalam beberapa bulan terakhir menurut CryptoJobsList trends data.</li>
-          <li>Pasar sangat <strong>terkorelasi dengan harga token</strong> — saat bear market, hiring bisa kolaps tiba-tiba.</li>
-        </ul>
       </div>
-    </div>
+    </section>
 
-    <div class="callout callout-web3" style="margin-top:16px;">
-      <strong>📌 Temuan Mengejutkan dari Web3 Workforce Report 2026</strong>
-      Lebih dari 53% lowongan Web3 di Maret 2026 kini <em>mensyaratkan</em> kemampuan AI. Artinya, Web3 sendiri kini mencari orang yang menguasai AI. Dua pertiga (66.8%) tenaga kerja Web3 melihat AI sebagai ancaman terhadap pekerjaan mereka dalam 5 tahun ke depan.
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- SECTION 4: MARKET SIZE & LONG TERM -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-number">4</div>
-      <h2>Ukuran Pasar & Prospek Jangka Panjang (2026–2030)</h2>
-    </div>
-
-    <div class="stat-grid">
-      <div class="stat-card ai">
-        <div class="tag">AI Agent Market 2025</div>
-        <div class="value">$7.8B</div>
-        <div class="desc">Nilai pasar global (MarketsandMarkets)</div>
-      </div>
-      <div class="stat-card ai">
-        <div class="tag">AI Agent Market 2030</div>
-        <div class="value">$52.6B</div>
-        <div class="desc">Proyeksi 2030 — CAGR 46.3%</div>
-      </div>
-      <div class="stat-card ai">
-        <div class="tag">Enterprise Adoption 2026</div>
-        <div class="value">40%</div>
-        <div class="desc">Enterprise apps terintegrasi AI agents by end 2026 (Gartner)</div>
-      </div>
-      <div class="stat-card web3">
-        <div class="tag">Blockchain Jobs — Global</div>
-        <div class="value">~66k</div>
-        <div class="desc">Total roles baru posted di 2025 (CoinCub Web3 Jobs Report)</div>
-      </div>
-    </div>
-
-    <h3 class="sub">Proyeksi & Trajectory</h3>
-
-    <div class="insight-grid">
-      <div class="risk-block" style="border-left:3px solid var(--accent-ai);">
-        <h4 style="color:var(--accent-ai-light);">🚀 AI Agent — Momentum Eksponensial</h4>
-        <ul>
-          <li>Gartner: 33% enterprise apps akan include agentic AI by 2028 (dari &lt;1% di 2024)</li>
-          <li>Gartner juga: 40% enterprise apps terintegrasi AI agents by akhir 2026</li>
-          <li>AI Agent market CAGR 46.3% — salah satu pertumbuhan tercepat di industri software</li>
-          <li>Coding/dev segment: CAGR 52.4% — segmen tumbuh tercepat</li>
-          <li>McKinsey: 39% enterprise masih experimenting, 23% sudah scaling — pipeline demand terus mengisi</li>
-          <li>PwC proyeksi AI bisa tambah 15.7 triliun ke GDP global by 2030</li>
-        </ul>
-      </div>
-      <div class="risk-block" style="border-left:3px solid var(--accent-web3);">
-        <h4 style="color:var(--accent-web3-light);">⚡ Web3 — Tumbuh tapi Tidak Merata</h4>
-        <ul>
-          <li>CoinCub: 66.000+ peran baru di 2025, 47% rebound dari 2024</li>
-          <li>Blockchain job postings naik 45% YoY di 2026 — tapi dari base yang jauh lebih kecil</li>
-          <li>Segmen terpanas: Smart Contract Security (+71%), Protocol Design (+52%)</li>
-          <li>Bitget Report: Blockchain saat ini punya 15.000–20.000 openings vs AI yang punya 1.000.000+</li>
-          <li>Jika blockchain ikuti trajektori AI, bisa 500.000+ jobs by 2028 — tapi ini masih spekulasi</li>
-          <li>Sangat tergantung siklus bull/bear crypto</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- SECTION 5: RISK ANALYSIS -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-number">5</div>
-      <h2>Analisis Risiko Karir</h2>
-    </div>
-
-    <div class="insight-grid">
-      <div class="insight-card">
-        <div class="ic-header">
-          <div class="dot dot-ai"></div>
-          <h3>Risiko AI Agent Engineering</h3>
+    <!-- SECTION: DSA -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="section-label">Bagian 4<br />Pertanyaan Kritis</span>
+          <h2 class="section-title">
+            Apakah DSA level MAANG+ wajib untuk AI Agent Engineering?
+          </h2>
         </div>
-        <ul>
-          <li><strong>Entry sangat kompetitif di top tier.</strong> New grad hiring di lab-lab terkemuka turun 50%+. Butuh portofolio produksi nyata.</li>
-          <li><strong>Field berkembang sangat cepat.</strong> Skills bisa ter-obsolete dalam 12–18 bulan jika tidak terus belajar.</li>
-          <li><strong>Hype cycle AI Agent</strong> bisa melambat jika adoption enterprise tidak sesuai ekspektasi.</li>
-          <li><strong>Ironi:</strong> AI Agent juga bisa mengotomasi sebagian pekerjaan software engineer sendiri.</li>
-        </ul>
-      </div>
-      <div class="insight-card">
-        <div class="ic-header">
-          <div class="dot dot-web3"></div>
-          <h3>Risiko Web3/Blockchain Engineering</h3>
+
+        <p
+          style="
+            font-size: 15px;
+            color: var(--ink-2);
+            max-width: 680px;
+            margin-bottom: 28px;
+            line-height: 1.7;
+          "
+        >
+          Jawaban singkat:
+          <strong style="color: var(--ink)"
+            >tergantung target perusahaan.</strong
+          >
+          Bukan binary "perlu" atau "tidak perlu" — jawabannya sangat tergantung
+          ke Tier mana kamu melamar.
+        </p>
+
+        <div style="margin-bottom: 32px">
+          <div class="tier-block">
+            <div class="tier-label t1">
+              Tier 1<br />FAANG / OpenAI<br />Anthropic / Google
+            </div>
+            <div class="tier-content">
+              <strong>DSA full MAANG-level wajib.</strong> Google Applied AI
+              Engineer melewati coding bar di level SWE penuh — arrays, trees,
+              graphs, DP. Groq bahkan dilaporkan lebih keras dari FAANG. Meta
+              mengizinkan AI tools di beberapa round, tapi pemahaman algoritma
+              tetap diuji — bar-nya justru lebih tinggi, bukan lebih rendah.
+            </div>
+          </div>
+          <div class="tier-block">
+            <div class="tier-label t2">
+              Tier 2<br />AI Startups<br />LangChain, Sierra<br />Factory AI,
+              Genspark
+            </div>
+            <div class="tier-content">
+              <strong>DSA dasar, yang berat adalah Agent System Design.</strong>
+              Dari interview nyata 2026: "Mereka tanya DSA, tapi hanya basic —
+              string cleaning, hash map logic. Yang berat justru grilling
+              mendalam tentang LangGraph architecture, state management, dan
+              conditional routing." Applied Intuition bahkan menghapus LeetCode
+              sepenuhnya — menggantinya dengan 45-menit open system design.
+            </div>
+          </div>
+          <div class="tier-block">
+            <div class="tier-label t3">
+              Tier 3<br />Enterprise / Bank<br />Healthcare / Consulting
+            </div>
+            <div class="tier-content">
+              <strong>System Design adalah round paling high-stakes.</strong>
+              Round ini menguji RAG pipeline design, eval methodology, dan
+              agentic architecture — bukan classical distributed systems. DSA
+              foundational tetap perlu, tapi bukan MAANG-level hard.
+            </div>
+          </div>
         </div>
-        <ul>
-          <li><strong>Sangat terkorelasi dengan pasar kripto.</strong> Hiring bisa kolaps 60–80% saat bear market seperti 2022.</li>
-          <li><strong>Konsentrasi pasar ekstrem.</strong> Q3 2026: 90%+ perusahaan Web3 dalam mode kontraksi/stagnasi. Hanya segelintir yang hiring agresif.</li>
-          <li><strong>Niche yang sangat spesifik.</strong> Skills Solidity/Rust tidak mudah di-transfer ke industri lain.</li>
-          <li><strong>Regulasi masih tidak pasti</strong> di banyak yurisdiksi — bisa menghambat hiring mendadak.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
 
-  <div class="divider"></div>
-
-  <!-- SECTION 6: FULL COMPARISON TABLE -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-number">6</div>
-      <h2>Tabel Perbandingan Komprehensif</h2>
-    </div>
-
-    <table class="comp-table">
-      <thead>
-        <tr>
-          <th style="width:22%">Dimensi</th>
-          <th class="ai-col">🤖 AI Agent Engineer</th>
-          <th class="web3-col">⛓️ Web3/Blockchain Engineer</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="metric">Volume Lowongan (AS)</td>
-          <td class="ai-val">~90.000 listing agentic AI (Stanford HAI) + 1M+ AI/ML umum <span class="badge badge-win">Unggul ✓✓✓</span></td>
-          <td class="web3-val">~15.000–20.000 global (bukan hanya AS)</td>
-        </tr>
-        <tr>
-          <td class="metric">Pertumbuhan YoY</td>
-          <td class="ai-val">+280% (agentic) / +74% (AI/ML umum) <span class="badge badge-win">Unggul ✓✓✓</span></td>
-          <td class="web3-val">+45% (dari base yang jauh lebih kecil)</td>
-        </tr>
-        <tr>
-          <td class="metric">Kompetisi per Job</td>
-          <td class="ai-val">Thin talent pool — demand >> supply <span class="badge badge-win">Unggul ✓✓</span></td>
-          <td class="web3-val">~120 pelamar/lowongan; talent-to-job ratio 1.97:1</td>
-        </tr>
-        <tr>
-          <td class="metric">Rata-rata Gaji (Mid)</td>
-          <td class="ai-val">$155K–$220K <span class="badge badge-win">Unggul ✓</span></td>
-          <td class="web3-val">$120K–$191K</td>
-        </tr>
-        <tr>
-          <td class="metric">Potensi Gaji Senior</td>
-          <td class="ai-val">$290K–$1M+ (frontier labs) <span class="badge badge-win">Unggul ✓✓✓</span></td>
-          <td class="web3-val">$200K–$350K</td>
-        </tr>
-        <tr>
-          <td class="metric">Ukuran Pasar 2026</td>
-          <td class="ai-val">$11.47B (AI Agent) / jauh lebih besar jika AI umum <span class="badge badge-win">Unggul ✓✓✓</span></td>
-          <td class="web3-val">Tidak ada angka pasar tenaga kerja yang setara</td>
-        </tr>
-        <tr>
-          <td class="metric">CAGR Pasar 2025–2030</td>
-          <td class="ai-val">46.3% (MarketsandMarkets) <span class="badge badge-win">Unggul ✓✓✓</span></td>
-          <td class="web3-val">Tidak ada data CAGR pasar kerja yang pasti</td>
-        </tr>
-        <tr>
-          <td class="metric">Remote Work</td>
-          <td class="ai-val">Banyak — tapi big tech mulai pull back ke onsite</td>
-          <td class="web3-val">78% remote — lebih fleksibel <span class="badge badge-ok">Web3 ✓</span></td>
-        </tr>
-        <tr>
-          <td class="metric">Entry Barrier</td>
-          <td class="ai-val">Python + ML/LLM fundamentals — bisa dipelajari dalam 6–12 bulan</td>
-          <td class="web3-val">Solidity/Rust + blockchain-specific concepts — lebih niche</td>
-        </tr>
-        <tr>
-          <td class="metric">Skill Transferability</td>
-          <td class="ai-val">Tinggi — Python, API, system design berlaku di hampir semua industri <span class="badge badge-win">Unggul ✓✓</span></td>
-          <td class="web3-val">Rendah–sedang — Solidity sangat Web3-specific</td>
-        </tr>
-        <tr>
-          <td class="metric">Volatilitas Pasar</td>
-          <td class="ai-val">Moderat — tergantung funding AI <span class="badge badge-good">Lebih Stabil</span></td>
-          <td class="web3-val">Tinggi — korelasi kuat dengan harga crypto <span class="badge badge-risk">Risiko Tinggi</span></td>
-        </tr>
-        <tr>
-          <td class="metric">Adoption Driver</td>
-          <td class="ai-val">Enterprise + konsumer + pemerintah — multi-sektor</td>
-          <td class="web3-val">DeFi, RWA, gaming, institusi keuangan — lebih terbatas</td>
-        </tr>
-        <tr>
-          <td class="metric">Outlook 2030</td>
-          <td class="ai-val">Sangat cerah — Gartner: 40% enterprise apps jalan AI agent by end 2026 <span class="badge badge-win">Unggul ✓✓✓</span></td>
-          <td class="web3-val">Positif tapi siklikal dan bergantung regulasi</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- SECTION 7: WHO SHOULD CHOOSE WHAT -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-number">7</div>
-      <h2>Siapa Sebaiknya Pilih Mana?</h2>
-    </div>
-
-    <div class="insight-grid">
-      <div class="insight-card">
-        <div class="ic-header">
-          <div class="dot dot-ai"></div>
-          <h3>Pilih AI Agent Engineering jika:</h3>
+        <h3
+          style="
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--ink);
+          "
+        >
+          DSA: Wajib, Situasional, atau Skip?
+        </h3>
+        <div class="dsa-grid">
+          <div class="dsa-col must">
+            <span class="dsa-col-title">Wajib Kuasai</span>
+            <ul>
+              <li>Graphs — BFS, DFS, Topological Sort</li>
+              <li>Trees &amp; Binary Trees</li>
+              <li>Hash Maps / Dictionaries</li>
+              <li>Queues &amp; Priority Queues (Heaps)</li>
+              <li>Recursion &amp; Stack</li>
+              <li>Sliding Window &amp; Two Pointers</li>
+              <li>Binary Search</li>
+              <li>Big O — Time &amp; Space Complexity</li>
+            </ul>
+          </div>
+          <div class="dsa-col sit">
+            <span class="dsa-col-title">Situasional (FAANG target)</span>
+            <ul>
+              <li>Dynamic Programming (standard)</li>
+              <li>Advanced Graph — Dijkstra, Bellman-Ford</li>
+              <li>Backtracking</li>
+              <li>Divide &amp; Conquer</li>
+              <li>Greedy Algorithms</li>
+            </ul>
+          </div>
+          <div class="dsa-col skip">
+            <span class="dsa-col-title">Skip / Sangat Rendah Prioritas</span>
+            <ul>
+              <li>Segment Trees, Fenwick Trees</li>
+              <li>Tries (kecuali NLP infra)</li>
+              <li>Bitmask DP, Interval DP</li>
+              <li>KMP, Z-algorithm, Suffix Arrays</li>
+              <li>Red-Black Trees, AVL Trees (impl. level)</li>
+              <li>Complex competitive programming patterns</li>
+            </ul>
+          </div>
         </div>
-        <ul>
-          <li>Kamu ingin berkarir dengan <strong>floor demand yang tinggi dan stabil</strong> — tidak korelasi dengan token price</li>
-          <li>Kamu <strong>lebih suka koding berbasis Python</strong>, API, system design, dan integrasi sistem</li>
-          <li>Kamu ingin skills yang <strong>transferable ke hampir semua industri</strong> (fintech, healthcare, enterprise, startup)</li>
-          <li>Kamu ingin <strong>ceiling gaji yang lebih tinggi</strong> jangka panjang</li>
-          <li>Kamu siap belajar cepat — field ini bergerak sangat cepat tapi juga rewarding</li>
-          <li>Kamu tidak keberatan bekerja di perusahaan non-crypto yang konvensional</li>
-        </ul>
-      </div>
-      <div class="insight-card">
-        <div class="ic-header">
-          <div class="dot dot-web3"></div>
-          <h3>Pilih Web3/Blockchain jika:</h3>
+
+        <div class="callout ai-callout" style="margin-top: 24px">
+          <p class="callout-title">
+            Yang Lebih Penting dari DSA untuk AI Agent Engineer
+          </p>
+          <p>
+            AI System Design (RAG pipeline, eval, agentic architecture) ·
+            LLM/LangGraph fundamentals · Agent Loop Design (tool use, memory,
+            failure recovery) · Evaluation Frameworks · Portofolio agent yang
+            sudah di-ship ke production.
+            <strong
+              >Alokasi rekomendasi: 15% DSA fondasi, 30% AI system design, 25%
+              LLM/agent frameworks, sisanya evaluasi dan praktik.</strong
+            >
+          </p>
         </div>
-        <ul>
-          <li>Kamu <strong>deeply passionate tentang crypto/DeFi</strong> sebagai ideologi, bukan sekadar karir</li>
-          <li>Kamu ingin <strong>remote work yang benar-benar fleksibel</strong> — 78% Web3 jobs fully remote</li>
-          <li>Kamu sudah punya <strong>strong background di Solidity/Rust</strong> atau kriptografi</li>
-          <li>Kamu siap dengan <strong>volatilitas pasar kerja</strong> dan mungkin freelance/kontrak</li>
-          <li>Kamu tertarik pada <strong>niche yang high-skill, high-barrier</strong> dengan community khusus</li>
-          <li>Kamu mau belajar AI <em>di atas</em> Web3 — karena 53% Web3 jobs kini juga require AI</li>
-        </ul>
+      </div>
+    </section>
+
+    <!-- FINAL RECOMMENDATION -->
+    <div class="final-rec">
+      <div class="wrap">
+        <div class="rec-number" aria-hidden="true">01</div>
+        <h2 class="rec-title">
+          Fokus ke AI Agent Engineering. Web3 bisa jadi tambahan, bukan
+          pengganti.
+        </h2>
+        <p class="rec-body">
+          Untuk seseorang yang ingin ship dan berkarir sekarang, AI Agent
+          Engineering memberikan return terbaik atas investasi waktu belajar.
+          <strong>Volume lowongan 5–6× lebih besar</strong>, demand melebihi
+          supply secara signifikan, gaji lebih tinggi di semua level, dan
+          skills-nya berlaku di hampir semua industri.
+        </p>
+        <p class="rec-body">
+          Web3 memiliki risiko struktural yang nyata: korelasi tinggi dengan
+          harga token, 90%+ perusahaan dalam mode kontraksi per Q3 2026, dan
+          pasar sangat tidak merata. Lebih dari separuh lowongan Web3 kini
+          mensyaratkan AI — artinya dengan menguasai AI lebih dulu, kamu tetap
+          bisa masuk Web3 kapan saja jika tertarik.
+        </p>
+        <p class="rec-body">
+          Untuk DSA: tidak perlu obsesi MAANG-level jika target kamu adalah AI
+          startups atau enterprise.
+          <strong
+            >Kuasai fondasi graphs, trees, hash maps, dan queues dengan
+            solid</strong
+          >, lalu investasikan sebagian besar waktu di AI system design dan
+          agent architecture — itulah yang benar-benar membedakan kandidat di
+          2026.
+        </p>
       </div>
     </div>
 
-    <div class="callout callout-note" style="margin-top:16px;">
-      <strong>💡 Opsi Ketiga: T-Shaped (AI + Web3)</strong>
-      Laporan Web3 Hiring 2026 menyebut "T-shaped talent" — orang yang ahli mendalam di satu bidang (AI atau blockchain) plus working fluency di bidang lainnya — sebagai yang paling dicari. AI + Web3 integration engineers menghasilkan $140K–$250K (RecruitBlock 2025). Jika memang ingin Web3, masuk lewat jalur AI dulu akan memberi kamu keunggulan besar karena sudah lebih dari separuh lowongan Web3 mensyaratkan AI proficiency.
-    </div>
-  </div>
-
-  <!-- FINAL VERDICT -->
-  <div class="final-verdict">
-    <h2>🏆 Rekomendasi Final — Berdasarkan Data</h2>
-    <p><strong>Untuk tujuan "ship dan berkarir" dengan prospek terbaik di 2026 dan beyond: pilih AI Agent Engineering.</strong></p>
-    <p>Perbedaannya bukan tipis — ini perbedaan skala. AI Agent memiliki ~90.000 lowongan di AS vs ~15.000–20.000 secara global untuk Web3. Pertumbuhannya 280% vs 45%. Gajinya lebih tinggi di semua level. Pasarnya bertumbuh dengan CAGR 46.3% ke $52.6B by 2030. Dan yang paling penting: <strong>skills-nya transferable ke hampir semua industri</strong>, bukan hanya crypto.</p>
-    <p>Web3 bukan field yang mati — tapi ada risiko struktural besar: korelasi dengan harga token, 90%+ perusahaan Web3 sedang dalam mode kontraksi di Q3 2026, dan pasar sangat tidak merata. Untuk entry-level, Web3 sangat sulit karena 41% postingan mensyaratkan 5+ tahun experience.</p>
-    <p><strong>Bottom line:</strong> Jika kamu mulai dari nol atau pindah karir sekarang di 2026, AI Agent Engineering memberikan return terbaik atas investasi waktu belajarmu — lebih besar volumenya, lebih stabil demand-nya, lebih tinggi gajinya, dan lebih luas transferabilitynya. Web3 bisa jadi tambahan di atas AI, bukan sebagai pengganti.</p>
-  </div>
-
-  <div class="source-note">
-    <strong>Sumber Data:</strong> Stanford HAI 2026 AI Index · PwC 2026 Global AI Jobs Barometer · Gartner Agentic AI Forecast · McKinsey AI Survey 2026 · Robert Half 2026 Salary Guide · KORE1 Agentic AI Hiring Survey · LinkedIn 2026 Jobs on the Rise · MarketsandMarkets AI Agent Market Report · CryptoJobsList Q1–Q3 2026 · CoinCub Web3 Jobs Report · Web3.Career Salary Data (Jan–Mar 2026) · TechFlow Q3 2026 Web3 Recruitment Report · Bitget Blockchain vs AI Talent Report · Metana Web3 Jobs 2026 Analysis · BLS Occupational Outlook Handbook
-  </div>
-
-</div>
-</body>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer-inner">
+          <span class="footer-text"
+            >Career Intelligence Brief — Q1/Q2 2026. Built with Claude. Azhar
+            Aufa. Job market deep dive research.</span
+          >
+          <span class="footer-text"
+            >Sumber: Stanford HAI · PwC · Gartner · McKinsey · Robert Half ·
+            LinkedIn · MarketsandMarkets · CryptoJobsList</span
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
